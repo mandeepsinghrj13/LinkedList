@@ -81,8 +81,8 @@ public class linkList
         // Insert the values
         list = insert(list, 56);
         list = insert(list, 30);
-        list = insert(list, 70);
-        
+        list = insert(list, 700);
+
    
         // Print the LinkedList
         printList(list);
