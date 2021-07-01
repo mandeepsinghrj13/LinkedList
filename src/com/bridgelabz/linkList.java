@@ -3,64 +3,76 @@ public class linkList
 {
 Node head;	 
 	
-	class Node{
+	class Node
+	{
 		int data;
 		Node next;
 		
-		public Node(int data) {
+		public Node(int data) 
+		{
 			this.data = data;
 			this.next = null; //by default object value is null
 		}
 	}
 	
 	// This is inert (Append) method
-	public Node insert(int data) {
+	public Node insert(int data) 
+	{
 		Node newNode = new Node(data);
 		if(head == null) {
 			head = newNode;
 		}
 		else {
 			Node temp = head;
-			while(temp.next != null) {
+			while(temp.next != null) 
+			{
 				temp = temp.next;
 			}
 			temp.next = newNode;
 		}
 		return newNode;
 	}
-
+	public void push(int data) 
+	{
+		Node newNode = new Node(data);
+		newNode .next = head;
+		head = newNode;	
+	}
+	// Additional data put in betn previous data 	
+		public void insertAfter(Node prevNode, int value) 
+		{
+			if (prevNode == null) 
+			{
+				System.out.println("Prev Node should not be null");
+				return;
+				}				
+				Node newNode = new Node(value);
+				newNode.next = prevNode.next;
+				prevNode.next = newNode;
+				print();		
+		}
+		//Delete first element
+		public int pop() 
+		{
+			int popData = 0;
+			if (head == null) 
+			{
+				System.out.println("Stack over flow ");
+			}
+			popData = head.data;
+			head = head.next;
+			
+			return popData;
+		}
 	// print the output
-	public void print() {
+	public void print() 
+	{
 		Node temp = head;
-		while(temp != null) {
+		while(temp != null) 
+		{
 			System.out.print(temp.data +  "-> ");
 			temp = temp.next;
 		}
 	
-	}
-	
-		
-	public void push(int data) {
-		Node newNode = new Node(data);
-		newNode .next = head;
-		head = newNode;
-			
-		
-	}
-       
-	// Additional data put in betn previous data
-	
-	public void insertAfter(Node prevNode, int value) {
-		if (prevNode == null) {
-			System.out.println("Prev Node should not be null");
-			return;
-			}
-			
-			Node newNode = new Node(value);
-			newNode.next = prevNode.next;
-			prevNode.next = newNode;
-
-			print();
-		
-	}
+	}	
 }
