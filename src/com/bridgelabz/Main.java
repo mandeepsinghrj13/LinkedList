@@ -2,14 +2,20 @@ package com.bridgelabz;
 public class Main 
 {
 	public static void main(String[] args) 
-	{
-		System.out.println("Welcome to linklist Program");		
-		linkList List = new linkList();
-		List.insert(56);
-		List.insert(30);
-		List.insert(70);
-    	int pop = List.pop();
-    	System.out.println(pop);
-    	List.print();	
-	}
+	  {
+		  linkList llist = new linkList();
+
+	    llist.insertAtEnd(1);
+	    llist.insertAtBeginning(2);
+	    llist.insertAtBeginning(3);
+	    llist.insertAtEnd(4);
+	    llist.insertAfter(llist.head.next, 5);
+
+	    System.out.println("Linked list: ");
+	    llist.printList();
+
+	    System.out.println("\nAfter deleting an element: ");
+	    llist.deleteNode(4);
+	    llist.printList();
+	  }
 }
